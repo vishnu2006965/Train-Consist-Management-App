@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TrainConsistApp {
 
@@ -8,38 +10,23 @@ public class TrainConsistApp {
         // Step 1: Welcome Message
         System.out.println("=== Train Consist Management App ===");
 
-        // Step 2: Initialize Passenger Bogie List
-        List<String> passengerBogies = new ArrayList<>();
+        // Step 2: Initialize HashSet for Bogie IDs
+        Set<String> bogieIds = new HashSet<>();
 
-        System.out.println("\nAdding passenger bogies...");
+        System.out.println("\nAdding bogie IDs (including duplicates)...");
 
-        // Step 3: Add Bogies (CREATE)
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("First Class");
+        // Step 3: Add Bogie IDs (including duplicates)
+        bogieIds.add("BG101");
+        bogieIds.add("BG102");
+        bogieIds.add("BG103");
+        bogieIds.add("BG101"); // Duplicate
+        bogieIds.add("BG102"); // Duplicate
 
-        // Step 4: Display Bogies (READ)
-        System.out.println("Passenger Bogies: " + passengerBogies);
+        // Step 4: Display Unique Bogie IDs
+        System.out.println("Unique Bogie IDs: " + bogieIds);
 
-        // Step 5: Remove a Bogie (DELETE)
-        System.out.println("\nRemoving 'AC Chair' bogie...");
-        passengerBogies.remove("AC Chair");
-
-        // Step 6: Display After Removal
-        System.out.println("Passenger Bogies after removal: " + passengerBogies);
-
-        // Step 7: Check Existence (SEARCH)
-        System.out.println("\nChecking if 'Sleeper' exists...");
-        if (passengerBogies.contains("Sleeper")) {
-            System.out.println("Sleeper bogie is present in the train.");
-        } else {
-            System.out.println("Sleeper bogie is NOT present.");
-        }
-
-        // Step 8: Final State
-        System.out.println("\nFinal Passenger Bogie List: " + passengerBogies);
-
-        // Step 9: Program continues
-        System.out.println("\nSystem ready for next operations...");
+        // Step 5: Program continues
+        System.out.println("\nSystem ensured no duplicate bogie IDs exist.");
+        System.out.println("System ready for next operations...");
     }
 }
